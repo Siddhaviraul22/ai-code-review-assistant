@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+const pool = require("./config/db");
+
 const app = express();
 
 app.use(cors());
@@ -14,6 +16,15 @@ app.get("/", (req, res) => {
     message: "AI Code Review Assistant API is running",
   });
 });
+
+pool
+  .query("SELECT NOW()")
+  .then(() => {
+    console.log("PostgreSQL database connected");
+  })
+  .catch((error) => {
+    console.error("Database connection error:", error.message);
+  });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
