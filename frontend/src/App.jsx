@@ -1,11 +1,39 @@
-function App() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-gray-900">
-        AI Code Review Assistant
-      </h1>
-    </div>
-  );
+import {
+
+BrowserRouter,
+
+Routes,
+
+Route,
+
+Navigate,
+
+} from "react-router-dom";
+
+import Signup from "./pages/Signup";
+
+import Login from "./pages/Login";
+
+function App(){
+
+return(
+
+<BrowserRouter>
+
+<Routes>
+
+<Route path="/" element={<Navigate to="/login"/>}/>
+
+<Route path="/signup" element={<Signup/>}/>
+
+<Route path="/login" element={<Login/>}/>
+
+</Routes>
+
+</BrowserRouter>
+
+);
+
 }
 
 export default App;
