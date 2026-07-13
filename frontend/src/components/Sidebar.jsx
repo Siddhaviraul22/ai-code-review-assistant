@@ -58,15 +58,25 @@ function Sidebar() {
 
             <button
 
-                className="flex items-center gap-3 px-6 py-5 border-t border-gray-700 hover:bg-gray-800"
+    onClick={() => {
 
-            >
+        localStorage.removeItem("token");
 
-                <FaSignOutAlt />
+        localStorage.removeItem("user");
 
-                Logout
+        window.location.href = "/login";
 
-            </button>
+    }}
+
+    className="flex items-center gap-3 px-6 py-5 border-t border-gray-700 hover:bg-gray-800"
+
+>
+
+    <FaSignOutAlt />
+
+    Logout
+
+</button>
 
         </div>
 

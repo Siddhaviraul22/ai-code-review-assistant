@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import Profile from "./pages/Profile";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
 
@@ -35,19 +36,31 @@ function App() {
                 />
 
                 <Route
-                    path="/dashboard"
-                    element={<Dashboard />}
-                />
+    path="/dashboard"
+    element={
+        <ProtectedRoute>
+            <Dashboard />
+        </ProtectedRoute>
+    }
+/>
 
-                <Route
-                    path="/projects"
-                    element={<Projects />}
-                />
+<Route
+    path="/projects"
+    element={
+        <ProtectedRoute>
+            <Projects />
+        </ProtectedRoute>
+    }
+/>
 
-                <Route
-                    path="/profile"
-                    element={<Profile />}
-                />
+<Route
+    path="/profile"
+    element={
+        <ProtectedRoute>
+            <Profile />
+        </ProtectedRoute>
+    }
+/>
 
             </Routes>
 

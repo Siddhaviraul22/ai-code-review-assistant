@@ -35,7 +35,7 @@ function Login() {
 
             localStorage.setItem("user",JSON.stringify(data.user));
 
-            setMessage("Login Successful");
+            window.location.href = "/dashboard";
 
         }
 

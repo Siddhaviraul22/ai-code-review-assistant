@@ -51,21 +51,19 @@ function Signup() {
 
       const data = await response.json();
 
-      if (!response.ok) {
-        setMessage(data.message);
-        setIsError(true);
-        return;
-      }
+      setMessage("Account created successfully");
+setIsError(false);
 
-      setMessage(data.message);
-      setIsError(false);
+setFormData({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+});
 
-      setFormData({
-        name: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
+setTimeout(() => {
+    window.location.href = "/login";
+}, 1500);
     } catch (error) {
       setMessage("Unable to connect to the server");
       setIsError(true);
