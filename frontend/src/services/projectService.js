@@ -103,3 +103,32 @@ export const deleteProject = async (
     return response.data;
 
 };
+export const saveCode = async (id, code) => {
+
+    const response = await axios.put(
+
+        `http://localhost:5000/api/code/${id}`,
+
+        { code },
+
+        config()
+
+    );
+
+    return response.data;
+
+};
+
+export const getCode = async (id) => {
+
+    const response = await axios.get(
+
+        `http://localhost:5000/api/code/${id}`,
+
+        config()
+
+    );
+
+    return response.data;
+
+};

@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ProjectDetails from "./pages/ProjectDetails";
 
 function App() {
 
@@ -60,6 +61,21 @@ function App() {
             <Profile />
         </ProtectedRoute>
     }
+/>
+<Route
+
+    path="/projects/:id"
+
+    element={
+
+        <ProtectedRoute>
+
+            <ProjectDetails />
+
+        </ProtectedRoute>
+
+    }
+
 />
 
             </Routes>
